@@ -106,8 +106,8 @@ jobs:
       - name: Unit Test
         run: cd 22-ts-usecase-common; npm run test
 
-  ts-usecase-react:
-    name: 23-ts-usecase-react
+  ts-react-initial:
+    name: 23-ts-react-initial
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source files
@@ -117,6 +117,36 @@ jobs:
         with:
           node-version: 12
       - name: NPM Install
-        run: cd 23-ts-usecase-react; npm install
+        run: cd 23-ts-react-initial; npm install
       - name: Unit Test
-        run: cd 23-ts-usecase-react; npm run test
+        run: cd 23-ts-react-initial; npm run test
+
+  ts-react-add-lint:
+    name: 24-ts-react-add-lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source files
+        uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: NPM Install
+        run: cd 24-ts-react-add-lint; npm install
+      - name: Unit Test
+        run: cd 24-ts-react-add-lint; npm run test
+
+  ts-react-testing-library:
+    name: 24-ts-react-testing-library
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source files
+        uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: NPM Install
+        run: cd 24-ts-react-testing-library; npm install
+      - name: Unit Test
+        run: cd 24-ts-react-testing-library; npm run test
