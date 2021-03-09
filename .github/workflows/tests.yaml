@@ -137,7 +137,7 @@ jobs:
         run: cd 24-ts-react-add-lint; npm run test
 
   ts-react-testing-library:
-    name: 24-ts-react-testing-library
+    name: 25-ts-react-testing-library
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source files
@@ -147,6 +147,6 @@ jobs:
         with:
           node-version: 12
       - name: NPM Install
-        run: cd 24-ts-react-testing-library; npm install
+        run: cd 25-ts-react-testing-library; npm install
       - name: Unit Test
-        run: cd 24-ts-react-testing-library; npm run test
+        run: cd 25-ts-react-testing-library; npm run test
