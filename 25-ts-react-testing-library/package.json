@@ -1,5 +1,5 @@
 {
-  "name": "24-ts-react-add-lint",
+  "name": "25-ts-react-testing-library",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,16 +7,18 @@
     "lint": "eslint --config .eslintrc.yaml --fix .",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom --coverage",
-    "test:ci": "CI=true react-scripts test --env=jsdom --coverage",
+    "test": "react-scripts test --verbose --env=jsdom",
+    "test:ci": "CI=true react-scripts test --env=jsdom",
+    "coverage": "npm run test -- --coverage",
+    "coverage:ci": "npm run test:ci -- --coverage",
     "eject": "react-scripts eject"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.8.2",
+    "@testing-library/user-event": "^12.8.3",
     "@types/jest": "^26.0.20",
-    "@types/node": "^14.14.32",
+    "@types/node": "^14.14.33",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.2",
     "react": "^17.0.1",
@@ -31,7 +33,7 @@
     "eslint": "^7.21.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-config-react": "^1.1.7",
-    "eslint-plugin-jest": "^24.1.10",
+    "eslint-plugin-jest": "^24.2.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
@@ -48,6 +50,25 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom":[
+      "src/**/*.{ts,tsx}",
+      "!src/index.tsx",
+      "!src/reportWebVitals.ts",
+      "!<rootDir>/node_modules/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches":90,
+        "functions": 90,
+        "lines":90,
+        "statements": 90
+      }
+    },
+    "coverageReporters": [
+      "text"
     ]
   }
 }

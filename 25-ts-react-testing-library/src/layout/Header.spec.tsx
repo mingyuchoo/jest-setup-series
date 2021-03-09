@@ -9,5 +9,13 @@ describe('<Header />', () => {
 
     const headElement = screen.getByText(/this is header/i);
     expect(headElement).toBeInTheDocument();
+    expect(headElement).toHaveTextContent('This is Header');
+  });
+  it('renders a link', () => {
+    render(<Header />);
+    const aLink = screen.getByText(/github/i);
+    expect(aLink).toBeInTheDocument();
+    expect(aLink).toHaveAttribute('target', '_blank');
+    expect(aLink).toHaveAttribute('href', 'https://github.com');
   });
 });

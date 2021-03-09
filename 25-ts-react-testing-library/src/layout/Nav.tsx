@@ -1,5 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Nav() {
-  return <nav>This is nav</nav>;
+  const [keyword, setKeyword] = useState('');
+  return (
+    <nav>
+      <input
+        name="keyword"
+        type="text"
+        placeholder="Enter keyword"
+        onChange={(event) => {
+          setKeyword(event.target.value);
+        }}
+        value={keyword}
+      />
+      <button
+        name="search"
+        type="button"
+        onClick={() => {
+          console.log(`send keyword: "${keyword}" to server`);
+          setKeyword('');
+        }}
+      >
+        Search
+      </button>
+      <p>{keyword || 'Search something.'}</p>
+    </nav>
+  );
 }
