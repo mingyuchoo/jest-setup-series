@@ -23,3 +23,5 @@ $ npx ts-jest config:init
 - [Cheetsheet](https://testing-library.com/docs/vue-testing-library/cheatsheet/)
 - [API](https://testing-library.com/docs/react-testing-library/api)
 - https://www.robinwieruch.de/react-testing-library
+- https://thoughtbot.com/blog/mocking-react-components-with-jest
+- https://medium.com/@ericdcobb/advanced-react-component-mocks-with-jest-and-react-testing-library-f1ae8838400b
