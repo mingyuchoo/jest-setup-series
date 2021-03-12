@@ -4,7 +4,8 @@ import React from 'react';
 
 import App from './App';
 
-// Mock components
+// Simple Inline Component Mocks
+// https://medium.com/@ericdcobb/advanced-react-component-mocks-with-jest-and-react-testing-library-f1ae8838400b
 jest.mock('./layout/Header', () => () => <header>Header</header>);
 jest.mock('./layout/Nav', () => () => <nav>Nav</nav>);
 jest.mock('./layout/Section', () => () => <section>Section</section>);
