@@ -1,4 +1,3 @@
-/* eslint-disable react/display-name */
 /******************************************************************************
  * REFERENCE WEB SITE
  * https://medium.com/@ericdcobb/advanced-react-component-mocks-with-jest-and-react-testing-library-f1ae8838400b
@@ -10,13 +9,25 @@ import React from 'react';
 import App from './App';
 
 // SIMPLE INLINE COMPONENT MOCKS
-// Component definition is missing display name but it works.
-jest.mock('./layout/Header', () => () => <header>Header</header>);
-jest.mock('./layout/Nav', () => () => <nav>Nav</nav>);
-jest.mock('./layout/Section', () => {
+
+// Usecase #1
+// eslint-disable-next-line react/display-name
+jest.mock('./layout/Header', () => () => <header>Header</header>); // Component definition is missing display name
+// Usecase #2
+jest.mock('./layout/Nav', () => {
+  // Component definition is missing display names
+  // eslint-disable-next-line react/display-name
   return () => {
+    return <nav>Nav</nav>;
+  };
+});
+// Usecase #3 - BEST WAY
+jest.mock('./layout/Section', () => {
+  // Component definition has display namess
+  const Section = () => {
     return <section>Section</section>;
   };
+  return Section;
 });
 
 describe('<App />', () => {
