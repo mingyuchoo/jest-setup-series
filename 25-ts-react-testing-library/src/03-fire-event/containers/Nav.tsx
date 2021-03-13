@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { ReactElement, useState } from 'react';
 
-export default function Nav() {
+export default function Nav(): ReactElement {
   const [keyword, setKeyword] = useState('');
   return (
     <nav>

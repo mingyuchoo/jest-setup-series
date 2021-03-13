@@ -25,3 +25,4 @@ $ npx ts-jest config:init
 - https://www.robinwieruch.de/react-testing-library
 - https://thoughtbot.com/blog/mocking-react-components-with-jest
 - https://medium.com/@ericdcobb/advanced-react-component-mocks-with-jest-and-react-testing-library-f1ae8838400b
+- https://www.freecodecamp.org/news/8-simple-steps-to-start-testing-react-apps-using-react-testing-library-and-jest/#2-testing-dom-elements

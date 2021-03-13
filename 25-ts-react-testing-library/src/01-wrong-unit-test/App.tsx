@@ -1,8 +1,6 @@
 import React, { ReactElement } from 'react';
 
-import Header from './layout/Header';
-import Nav from './layout/Nav';
-import Section from './layout/Section';
+import Header from './containers/Header';
 
 function App(): ReactElement {
   const title = 'React Testing Library';
@@ -10,8 +8,6 @@ function App(): ReactElement {
     <div className="App">
       <h1>{title}</h1>
       <Header />
-      <Nav />
-      <Section />
     </div>
   );
 }

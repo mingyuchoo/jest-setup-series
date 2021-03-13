@@ -1,6 +1,9 @@
 import React from 'react';
 
-function Header() {
+/*******************************************
+ * Try changing `<header>` and `Github` belows.
+ ********************************************/
+function Header(): React.ReactElement {
   return (
     <header>
       <h1>This is Header</h1>
