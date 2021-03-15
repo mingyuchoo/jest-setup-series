@@ -14,6 +14,7 @@
     "test:04": "react-scripts test --verbose --env=jsdom ./src/04-props/",
     "test:05": "react-scripts test --verbose --env=jsdom ./src/05-state/",
     "test:06": "react-scripts test --verbose --env=jsdom ./src/06-state-async/",
+    "test:07": "react-scripts test --verbose --env=jsdom ./src/07-react-router/",
     "test:all": "react-scripts test --verbose --env=jsdom",
     "test:all:ci": "CI=true react-scripts test --env=jsdom",
     "coverage:all": "react-scripts test --env=jsdom --coverage",
@@ -28,8 +29,10 @@
     "@types/node": "^14.14.34",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.2",
+    "@types/react-router-dom": "^5.1.7",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "typescript": "^4.2.3",
     "web-vitals": "^1.1.0"
