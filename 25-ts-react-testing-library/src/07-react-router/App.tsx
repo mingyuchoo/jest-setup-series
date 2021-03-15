@@ -4,10 +4,12 @@ import { Link, Route, Switch, useLocation } from 'react-router-dom';
 const About = () => <div>You are on the about page</div>;
 const Home = () => <div>You are home</div>;
 const NoMatch = () => <div>No match</div>;
+
 export const LocationDisplay = (): ReactElement => {
   const location = useLocation();
   return <div data-testid="location-display">{location.pathname}</div>;
 };
+
 function App(): ReactElement {
   return (
     <div>
@@ -28,4 +30,5 @@ function App(): ReactElement {
     </div>
   );
 }
+
 export default App;
