@@ -16,7 +16,7 @@
     "test:05": "react-scripts test --verbose --env=jsdom ./src/05-state/",
     "test:06": "react-scripts test --verbose --env=jsdom ./src/06-state-async/",
     "test:07": "react-scripts test --verbose --env=jsdom ./src/07-react-router/",
-    "test:08": "react-scripts test --verbose --env=jsdom ./src/08-useEffect/",
+    "test:08": "react-scripts test --verbose --env=jsdom ./src/08-hooks/",
     "test:all": "react-scripts test --verbose --env=jsdom",
     "test:all:ci": "CI=true react-scripts test --env=jsdom",
     "coverage:all": "react-scripts test --env=jsdom --coverage",
