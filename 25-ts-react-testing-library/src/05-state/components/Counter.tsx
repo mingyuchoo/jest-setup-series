@@ -1,7 +1,5 @@
 import React, { ReactElement, useState } from 'react';
 
-// import Button from './Button';
-
 const Counter: React.FC = (): ReactElement => {
   const [counter, setCounter] = useState(0);
   return (
