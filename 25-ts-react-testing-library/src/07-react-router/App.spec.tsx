@@ -59,8 +59,6 @@ describe('<App />', () => {
       </Router>
     );
 
-    screen.debug();
-
     expect(screen.getByTestId('location-display')).toHaveTextContent(route);
   });
 });
