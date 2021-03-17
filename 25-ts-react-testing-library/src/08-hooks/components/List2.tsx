@@ -1,7 +1,6 @@
 import React, { ReactElement, useEffect, useState } from 'react';
 
-// timeout=0 to simulate mocked api responses
-const loadFromApi = () => new Promise((resolve) => setTimeout(resolve, 0));
+import loadFromApi from '../api/api';
 
 function List2(): ReactElement {
   const [loaded, setLoaded] = useState(false);
