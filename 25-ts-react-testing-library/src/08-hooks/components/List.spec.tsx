@@ -22,6 +22,7 @@ describe('<List />', () => {
     (global as any).fetch = mockedFetch;
 
     render(<List />);
+
     const result = await screen.findByTestId('test', {}, { timeout: 3000 });
 
     expect(result).toBeInTheDocument();
