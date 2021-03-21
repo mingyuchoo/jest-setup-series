@@ -17,6 +17,7 @@
     "test:06": "react-scripts test --verbose --env=jsdom ./src/06-state-async/",
     "test:07": "react-scripts test --verbose --env=jsdom ./src/07-react-router/",
     "test:08": "react-scripts test --verbose --env=jsdom ./src/08-hooks/",
+    "test:09": "react-scripts test --verbose --env=jsdom ./src/09-custom-hooks/",
     "test:all": "react-scripts test --verbose --env=jsdom",
     "test:all:ci": "CI=true react-scripts test --env=jsdom",
     "coverage:all": "react-scripts test --env=jsdom --coverage",
@@ -40,6 +41,7 @@
     "web-vitals": "^1.1.0"
   },
   "devDependencies": {
+    "@testing-library/react-hooks": "^5.1.0",
     "@typescript-eslint/eslint-plugin": "^4.17.0",
     "@typescript-eslint/parser": "^4.17.0",
     "eslint": "^7.22.0",
