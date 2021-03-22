@@ -1,19 +1,16 @@
 import React, { ReactElement } from 'react';
-import { Link, Route, Switch, useLocation } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 
-const About = () => <div>You are on the about page</div>;
-const Home = () => <div>You are home</div>;
-const NoMatch = () => <div>No match</div>;
-
-export const LocationDisplay = (): ReactElement => {
-  const location = useLocation();
-  return <div data-testid="location-display">{location.pathname}</div>;
-};
+import About from './components/About';
+import Home from './components/Home';
+import LocationDisplay from './components/LocationDisplay';
+import NoMatch from './components/NoMatch';
 
 function App(): ReactElement {
   return (
     <div>
       <Link to="/">Home</Link>
+      <br />
       <Link to="/about">About</Link>
       <Switch>
         <Route exact path="/">

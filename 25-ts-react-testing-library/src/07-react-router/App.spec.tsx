@@ -10,7 +10,8 @@ import { createMemoryHistory } from 'history';
 import React from 'react';
 import { Router } from 'react-router-dom';
 
-import App, { LocationDisplay } from './App';
+import App from './App';
+import LocationDisplay from './components/LocationDisplay';
 
 describe('<App />', () => {
   it('full app rendering/navigating', () => {
