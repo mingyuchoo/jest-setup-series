@@ -4,7 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
-import App from './07-react-router/App';
+import App from './09-custom-hooks/App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(

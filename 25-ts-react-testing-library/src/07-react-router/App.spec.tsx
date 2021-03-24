@@ -2,64 +2,100 @@
  * https://testing-library.com/docs/example-react-router/
  *
  **********************************************************/
-import '@testing-library/jest-dom/extend-expect';
+// import '@testing-library/jest-dom/extend-expect';
 
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 import React from 'react';
 import { Router } from 'react-router-dom';
 
 import App from './App';
+import Detail from './components/Detail';
+import Home from './components/Home';
+import List from './components/List';
 import LocationDisplay from './components/LocationDisplay';
+import NoMatch from './components/NoMatch';
+
+jest.mock('./components/Detail', () => {
+  const Detail = () => {
+    return <div>Detail</div>;
+  };
+  return Detail;
+});
+
+jest.mock('./components/Home', () => {
+  const Home = () => {
+    return <div>MockedHome</div>;
+  };
+  return Home;
+});
+
+jest.mock('./components/List', () => {
+  const List = () => {
+    return <div>MockedList</div>;
+  };
+  return List;
+});
+
+jest.mock('./components/LocationDisplay', () => {
+  const LocationDisplay = () => {
+    return <div>MockedLocationDisplay</div>;
+  };
+  return LocationDisplay;
+});
+
+jest.mock('./components/NoMatch', () => {
+  const NoMatch = () => {
+    return <div>MockedNoMatch</div>;
+  };
+  return NoMatch;
+});
+
+// const mockedDetail = Detail as jest.Mocked<typeof Detail>;
+// const mockedHome = Home as jest.Mocked<typeof Home>;
+// const mockedList = List as jest.Mocked<typeof List>;
+// const mockedLocationDisplay = LocationDisplay as jest.Mocked<typeof LocationDisplay>;
+// const mockedNoMatch = NoMatch as jest.Mocked<typeof NoMatch>;
 
 describe('<App />', () => {
-  it('full app rendering/navigating', () => {
-    const history = createMemoryHistory();
-    render(
-      <Router history={history}>
-        <App />
-      </Router>
-    );
+  describe('Positive Cases', () => {
+    it('should render initial page.', () => {
+      const history = createMemoryHistory();
+      render(
+        <Router history={history}>
+          <App />
+        </Router>
+      );
 
-    // 현재 라우트 상태 확인
-    expect(screen.getByText(/you are home/i)).toBeInTheDocument();
+      expect(screen.getByText(/mockedhome/i)).toBeInTheDocument();
+    });
 
-    // 버튼 클릭
-    const leftClick = { button: 0 };
-    userEvent.click(screen.getByText(/about/i), leftClick);
+    it('should route to list page.', () => {
+      const history = createMemoryHistory();
+      render(
+        <Router history={history}>
+          <App />
+        </Router>
+      );
+      fireEvent.click(screen.getByText(/list/i), { button: 0 });
 
-    // 새 페이지로 변경된 상태 확인
-    expect(screen.getByText(/you are on the about page/i)).toBeInTheDocument();
+      expect(screen.getByText(/mockedlist/i)).toBeInTheDocument();
+    });
   });
+  describe('Negative Cases', () => {
+    it('landing on not existing page.', () => {
+      const history = createMemoryHistory();
 
-  it('landing on a bad page', () => {
-    const history = createMemoryHistory();
+      history.push('/some/bad/route');
 
-    // 강제로 없는 페이지 요청
-    history.push('/some/bad/route');
+      render(
+        <Router history={history}>
+          <App />
+        </Router>
+      );
 
-    render(
-      <Router history={history}>
-        <App />
-      </Router>
-    );
-
-    expect(screen.getByText(/no match/i)).toBeInTheDocument();
-  });
-
-  it('rendering a component that uses useLocation', () => {
-    const history = createMemoryHistory();
-
-    const route = '/some-route';
-    history.push(route);
-
-    render(
-      <Router history={history}>
-        <LocationDisplay />
-      </Router>
-    );
-
-    expect(screen.getByTestId('location-display')).toHaveTextContent(route);
+      expect(screen.getByText(/mockednomatch/i)).toBeInTheDocument();
+      expect(screen.getByText(/mockedlocationdisplay/i)).toBeInTheDocument();
+    });
   });
 });

@@ -7,7 +7,9 @@
     "lint": "eslint --config .eslintrc.yaml --fix .",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "npm run coverage:all:ci",
+    "test": "npm run test:all",
+    "test:all": "react-scripts test --verbose --env=jsdom",
+    "test:all:ci": "CI=true react-scripts test --env=jsdom",
     "test:00": "react-scripts test --verbose --env=jsdom ./src/00-initial/",
     "test:01": "react-scripts test --verbose --env=jsdom ./src/01-wrong-unit-test/",
     "test:02": "react-scripts test --verbose --env=jsdom ./src/02-right-unit-test/",
@@ -18,8 +20,7 @@
     "test:07": "react-scripts test --verbose --env=jsdom ./src/07-react-router/",
     "test:08": "react-scripts test --verbose --env=jsdom ./src/08-hooks/",
     "test:09": "react-scripts test --verbose --env=jsdom ./src/09-custom-hooks/",
-    "test:all": "react-scripts test --verbose --env=jsdom",
-    "test:all:ci": "CI=true react-scripts test --env=jsdom",
+    "coverage": "npm run coverage:all",
     "coverage:all": "react-scripts test --env=jsdom --coverage",
     "coverage:all:ci": "CI=true react-scripts test --env=jsdom --coverage",
     "eject": "react-scripts eject"
@@ -82,7 +83,8 @@
       }
     },
     "coverageReporters": [
-      "text"
+      "text",
+      "html"
     ]
   }
 }

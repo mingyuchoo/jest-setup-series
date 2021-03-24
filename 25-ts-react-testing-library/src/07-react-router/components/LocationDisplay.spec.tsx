@@ -6,21 +6,21 @@ import { Router } from 'react-router-dom';
 import LocationDisplay from './LocationDisplay';
 
 describe('<LocationDisplay />', () => {
-  it('should render "/about"', () => {
+  it('should render "/list"', () => {
     const history = createMemoryHistory();
-    history.push('/about');
+    history.push('/list');
     render(
       <Router history={history}>
         <LocationDisplay />
       </Router>
     );
-    const div = screen.getByText('/about');
-    expect(div).toBeInTheDocument();
+    const listPage = screen.getByText('/list');
+    expect(listPage).toBeInTheDocument();
 
     const button = screen.getByText('go home');
     fireEvent.click(button, { button: 1 });
 
-    const about = screen.getByText('/');
-    expect(about).toBeInTheDocument();
+    const homePage = screen.getByText('/');
+    expect(homePage).toBeInTheDocument();
   });
 });

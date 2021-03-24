@@ -33,8 +33,6 @@ describe('<App />', () => {
     it('renders JUST App component', () => {
       const { container } = render(<App />);
 
-      //screen.debug(); // for debugging
-
       // CAN DO THIS
       const div = container.querySelector('div.App');
       expect(div).toBeInTheDocument();

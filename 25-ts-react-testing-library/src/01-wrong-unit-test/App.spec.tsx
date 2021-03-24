@@ -8,8 +8,6 @@ describe('<App />', () => {
     it('but a kind of INTEGRATED component tests.', () => {
       const { container } = render(<App />);
 
-      //screen.debug(); // for debugging
-
       const header = container.querySelector('header');
 
       expect(header).toBeInTheDocument();

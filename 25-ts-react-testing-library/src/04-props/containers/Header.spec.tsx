@@ -15,8 +15,6 @@ describe('<Header />', () => {
   it('renders Header component', () => {
     render(<Header />);
 
-    //screen.debug();
-
     const element = screen.getByText(/this is header/i);
     expect(element).toBeInTheDocument();
   });

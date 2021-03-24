@@ -18,8 +18,6 @@ describe('<List2 />', () => {
 
     const div = await screen.findByText(/loaded/i, {}, { timeout: 500 });
 
-    screen.debug();
-
     expect(div).toBeTruthy();
   });
 });

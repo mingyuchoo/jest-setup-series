@@ -8,7 +8,11 @@ describe('useCommentsManagement.ts', () => {
     act(() => {
       void result.current.fetchComments();
     });
-    await waitForNextUpdate();
+
+    //  방법 1
+    await waitForNextUpdate({ timeout: 3000 }); // wait for 3 sec
+
+    // 방법 2
     // await waitForValueToChange(
     //   () => {
     //     return result.current.comments;
