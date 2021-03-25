@@ -5,7 +5,7 @@ import { Route, Router } from 'react-router-dom';
 
 import Detail from './Detail';
 
-describe('<Detail />', () => {
+describe('<Detail /> Use case 2', () => {
   describe('Positive Case', () => {
     it('should render "detail" detail page.', () => {
       const history = createMemoryHistory();
