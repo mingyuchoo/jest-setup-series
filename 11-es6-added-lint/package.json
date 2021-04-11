@@ -8,7 +8,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
-    "@babel/preset-env": "^7.13.10"
+    "@babel/preset-env": "^7.13.10",
+    "@cucumber/cucumber": "^7.1.0"
   },
   "dependencies": {
     "eslint": "^7.22.0",
